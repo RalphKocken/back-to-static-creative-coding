@@ -13,6 +13,16 @@
                     "/images/sparkle5.png",
                     "/images/sparkle6.png",
                 ]
+
+            // 6 different pop-art images
+            let popArtsImages = [
+                "/images/popArtImage1.png",
+                "/images/popArtImage2.png",
+                "/images/popArtImage3.png",
+                "/images/popArtImage4.png",
+                "/images/popArtImage5.png",
+                "/images/popArtImage6.png",
+            ]
             
             // This function makes the "kapow" image follow the cursor, so when it's clicked it's in the right position.
             document.addEventListener('mousemove', (e) =>{
@@ -23,6 +33,7 @@
             //This function makes the "kapow" image scale from 0 to 1, by adding a class.
             document.addEventListener('click', () => {
                 kaPow.classList.add('kapowAnimation')
+                kaPow.src = popArtsImages[Math.floor(Math.random() * popArtsImages.length)];
                 document.addEventListener('animationend', () =>{
                     kaPow.classList.remove('kapowAnimation')
                 })
@@ -40,8 +51,10 @@
                 trailItem.className = 'trail-item';
 
                 //set the position of the sparkle close to the cursor
-                trailItem.style.top = e.pageY + randomNumber +'px';
-                trailItem.style.left = e.pageX + 'px';
+                trailItem.style.top = e.pageY + randomNumber + 'px';
+                trailItem.style.left = e.pageX + randomNumber + 'px';
+
+                console.log(trailItem.style.top)
 
                 //set the background to 1 of the 6 sparkles at random
                 trailItem.style.background = "url(" + sparkles[Math.floor(Math.random() * sparkles.length)] + ")";
