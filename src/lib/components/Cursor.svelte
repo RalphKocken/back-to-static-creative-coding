@@ -37,12 +37,15 @@
                 document.addEventListener('animationend', () =>{
                     kaPow.classList.remove('kapowAnimation')
                 })
+
             })
 
             //This function makes the sparkles follow the cursor.
             document.addEventListener('mousemove', (e) => {
                 //set a randomnumber between -50 and 50
-                let randomNumber = Math.floor(Math.random() * 101) - 50;
+                let randomNumberX = Math.floor(Math.random() * 101) - 50;
+                let randomNumberY = Math.floor(Math.random() * 101) - 50;
+
 
                 //create a div
                 let trailItem = document.createElement('div');
@@ -51,8 +54,8 @@
                 trailItem.className = 'trail-item';
 
                 //set the position of the sparkle close to the cursor
-                trailItem.style.top = e.pageY + randomNumber + 'px';
-                trailItem.style.left = e.pageX + randomNumber + 'px';
+                trailItem.style.top = e.pageY + randomNumberY + 'px';
+                trailItem.style.left = e.pageX + randomNumberX + 'px';
 
                 console.log(trailItem.style.top)
 

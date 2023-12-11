@@ -63,7 +63,7 @@
 
 body{
     background-color: var(--background-color);
-    cursor: url("/images/magicwand.png"), auto;
+    /* cursor: url("/images/magicwand.png"), auto; */
     margin: 0;
     overflow: hidden;
 }  
@@ -129,7 +129,7 @@ button{
 
 a{
     text-decoration: none;
-    cursor: url("/images/magicwand.png"), auto;
+    /* cursor: url("/images/magicwand.png"), auto; */
 }
 
 h1, 

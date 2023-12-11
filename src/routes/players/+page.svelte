@@ -32,6 +32,7 @@
 </script>
 
 <main>
+    <button class="fun-button">Show me something fun</button>
     <header>
         <h2>All Players</h2>
         <p class="subtitle-medium">View all players</p>
@@ -108,6 +109,10 @@
         width: fit-content;
         bottom: 3.5rem;
         left: 3.5rem;
+    }
+
+    .fun-button{
+        position: static;
     }
     
 </style>
