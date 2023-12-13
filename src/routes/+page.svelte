@@ -4,10 +4,10 @@
 <main>
     <section>
         <div>
-            <a href="#" class="testBTN">
+            <button class="testBTN">
                 <h2>Create Tournament</h2>
                 <p class="subtitle-medium">Create your tournament</p>
-            </a>
+            </button>
         </div>
         <div>
             <a href="/teams/new">

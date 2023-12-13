@@ -115,16 +115,21 @@ input::placeholder{
     color: var(--primary-font-color);
 }
 
-button{
+/* button{
     background-color: var(--button-background-color);
     color: var(--button-font-color);
     border-radius: 25px;
     padding: 0.7rem 1.2rem;
-    /* cursor: pointer; */
+    cursor: pointer;
     border: none;
     font-family: var(--secondary-font-family);
     font-weight: 700;
     font-size: 1rem;
+} */
+
+button{
+    background-color: transparent;
+    border: none;
 }
 
 a{
