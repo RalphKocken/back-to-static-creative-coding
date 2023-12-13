@@ -1,11 +1,10 @@
 <script>
-    
 </script>
 
 <main>
     <section>
         <div>
-            <a href="/tournaments/new">
+            <a href="#" class="testBTN">
                 <h2>Create Tournament</h2>
                 <p class="subtitle-medium">Create your tournament</p>
             </a>
