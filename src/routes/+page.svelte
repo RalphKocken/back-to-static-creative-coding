@@ -36,7 +36,6 @@
 
 
 <style>
-
     h2{
         width: 50%;
         margin-bottom: 0.5rem;

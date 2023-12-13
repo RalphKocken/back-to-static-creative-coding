@@ -79,6 +79,7 @@ body{
 
 main{
     padding: 6rem 3.5rem;
+    transition: 2s linear;
 }
 
 header{
@@ -233,9 +234,35 @@ h2 {
 
 /* SCARY SMILEY ANIMATION */
 
+svg{
+    pointer-events: none;
+    inset: 0;
+    margin: auto;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+}
+
+:root{
+    --anim-timing: 0.1s;
+}
+
+button{
+    cursor: pointer;
+}
+
+.teeth{
+    opacity: 0;
+}
+
+.eye-small{
+    opacity: 0;
+}
 .teeth-animation{
     animation: showTeeth 0.5s linear forwards;
 }
+
+/* ANIMATION HANDLERS */
 		
 .mouth-animation{
     animation: open-mouth var(--anim-timing) linear forwards;
@@ -253,42 +280,26 @@ h2 {
     animation: show-eye var(--anim-timing) linear forwards;
 }
 
-svg{
-    pointer-events: none;
-    inset: 0;
-    margin: auto;
-    position: absolute;
-    opacity: 0;
-    transform: scale(0);
-}
-
 .svg-animation{
-    animation: svg-animation 4s linear forwards;
+    animation: svg-animation 2s linear forwards;
 }
 
+
+/* KEYFRAMES FOR SCARY ANIMATION */
+
+/* Scale the smiley to 3 times it original size, and make it visible by changing the opacity from 0 to 1 */
 @keyframes svg-animation{
     from{
         opacity: 0;
         transform: scale(0);
     }
-
     to{
         opacity: 1;
         transform: scale(3);
     }
 }
 
-button{
-    cursor: pointer;
-}
-:root{
-    --anim-timing: 0.1s;
-}
-
-.teeth{
-    opacity: 0;
-}
-
+/* Make the teeth visible by changing the opacity from 0 to 1 */
 @keyframes showTeeth{
     from{
         opacity: 0;
@@ -298,17 +309,17 @@ button{
     }
 }
 
+/* Open the mouth of the smiley by changing the coordinates of the svg "mouth" path.  */
 @keyframes open-mouth {
     0% {
         d: path("M650 368.57C650 382.377 515.685 393.57 350 393.57C184.315 393.57 50 382.377 50 368.57C50 354.763 184.315 343.57 350 343.57C515.685 343.57 650 354.763 650 368.57Z");
     }
-
     100% {
         d: path("M650 493.57C650 576.413 515.685 643.57 350 643.57C184.315 643.57 50 576.413 50 493.57C50 410.727 184.315 343.57 350 343.57C515.685 343.57 650 410.727 650 493.57Z");
     }
 }
 
-
+/* Close and open the right eye by changing coordinates of the svg "right-eye" path */
 @keyframes close-open-right-eye-anim{
     0%{
         cx:442.085; cy:224.448; rx:50; ry:100;
@@ -321,6 +332,7 @@ button{
     }
 }
 
+/* Close and open the left eye by changing coordinates of the svg "left-eye" path */
 @keyframes close-open-left-eye-anim{
     0%{
         cx:250.523; cy:224.448; rx:50; ry:100;
@@ -333,19 +345,14 @@ button{
     }
 }
 
-.eye-small{
-    opacity: 0;
-}
-
+/* Make the white and red eye visible by changing the opacity */
 @keyframes show-eye{
     0%{
         opacity: 0;
     }
-
     80%{
         opacity: 0;
     }
-
     100%{
         opacity: 1;
     }
